@@ -5,7 +5,9 @@ pipeline {
         stage("build app"){
             steps{
                 echo "Building app using gradle"
-                bat "gradle build"
+                bat """
+                    cd src\\main\\java\\hello
+                    gradle build"""
             }
         }
         stage("show the war that is created"){
