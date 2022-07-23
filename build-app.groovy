@@ -5,7 +5,7 @@ pipeline {
         stage("build app"){
             steps{
                 echo "Building app using gradle"
-                gradle build
+                bat "gradle build"
             }
         }
         stage("show the war that is created"){
