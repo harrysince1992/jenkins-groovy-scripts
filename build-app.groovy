@@ -7,12 +7,13 @@ pipeline {
                 echo "Building app using gradle"
                 bat """
                     cd src\\main\\java\\hello
+                    gradle --status
                     gradle build"""
             }
         }
         stage("show the war that is created"){
             steps{
-                echo "war version created" 
+                echo "war version created"
             }
         }
     }
