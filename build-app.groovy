@@ -7,13 +7,13 @@ pipeline {
                 echo "Building app using gradle"
                 bat """
                     cd src\\main\\java\\hello
-                    gradle --status
-                    gradle build"""
+                    gradle build
+                    """
             }
         }
-        stage("show the war that is created"){
+        stage("Push the war that is created to git"){
             steps{
-                echo "war version created"
+                echo "Pushing the jar file to github repo ${env.GIT_URL}"
             }
         }
     }
